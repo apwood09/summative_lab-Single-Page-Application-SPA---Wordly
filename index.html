@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="app-container">
+            <h1>Wordly Search</h1>
+
+            <!-- search form -->
+            <form id="search-form">
+                <input type="search" id="word-input" placeholder="Enter a Word...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- result section -->
+        <div id="result-section" class="hidden">
+            <h2 id="result-word"></h2>
+
+             <!-- syllables & POS -->
+              <p id="word-meta">
+                <span id="syllables"></span>
+                <span id="POS"></span>
+              </p>
+            <!-- placeholder audio playback -->
+            <div id="audio-container"></div>
+            <br>
+            <!-- placeholder definitions -->
+            <h3>Definition</h3>
+            <p id="definitions"></p>
+            <br>
+            <!-- placeholder synonyms -->
+            <h3>Synonyms</h3>
+            <p id="synonyms"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
