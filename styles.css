@@ -1,0 +1,186 @@
+/* import fantsy-style font: Google Fonts */
+@import url('https://fonts.googleapis.com');
+
+/* body */
+body {
+    font-family: 'Cinzel Decorative', serif; /* fantasy font */
+    background-color: #0d0d1a; /* dark purple/blue */ 
+    background-size: cover;
+    color: #e0e0ff; /* light, etheral text color */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* page wrapper */
+.page-wrapper {
+    max-width: 600px;
+    margin: 40px auto; 
+    padding: 20px;
+    /* subtle glow/box fir magical look */
+    background-color: rgba(20, 20, 50, 0.8); /* semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.5), inset 0 0 10px rgba(100, 100, 255, 0.3);
+}
+
+/* app container */
+.app-container {
+    max-width: 600px;
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 10px;
+}
+
+/* search form container */
+#search-form {
+    display: flex; /* aligns input & button side-by-side */
+    max-width: 400px; /* form max-width on large screen */
+    margin: 20px auto; /* centers form horizontaly on page */
+    overflow: hidden; /* children do not overflow rounded corners */
+    justify-content: space-between; /* Space out input & button */
+    /* slight border glow */
+    border: 1px solid rgb(100, 100, 255, 0.3);
+    border-radius: 14px;
+}
+
+/* input border */
+input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 14px;
+    border: 2px solid #66ccff;  /* etheral light bllue */
+    background-color: rgba(255, 255, 255, 0.1); /* slight transparent input field */
+    color: #fff;  /* white text */
+}
+
+/* input border: clicked */ 
+input:focus {
+    outline: none;
+    border-color: #aaffaa; /* light green glow */
+    box-shadow: 0 0 10px #aaffaa; /* glowing effect */
+}
+
+/* input field */
+#word-input {
+    padding: 10px; /* space inside input */
+    flex-grow: 1;  /* allows input fill available space */
+    font-size: 16px; 
+    margin-right: 10px;
+ }
+
+ /* placeholder style */
+ #word-input::placeholder {
+    color: #aaaacc; /* muted color */
+    opacity: 0.7;
+}
+
+ /* search button */
+ #search-form button {
+    background-color: #993366; /* deep purple */
+    color: #fff; /* white text color */
+    padding: 10px 15px; /* button spacing */
+    cursor: pointer;
+    font-size: 14px; 
+    border-radius: 14px; /* round corners  */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* smmoth transitions */
+    box-shadow: 0 0 15px #993366;
+
+ }
+
+ /* push effect */
+ #search-form button:active {
+    transform: scale(0.97);
+    transition: 0.1s ease;
+ } 
+
+ /* button hover */
+ #search-form button:hover {
+    background-color: #cc6699; /* light purple */ 
+    transform: scale(1.05); /* slight enlarge */ 
+    box-shadow: 0 0 15px #cc6699; /* stronger glow */
+ }
+
+.hidden {
+    display: none;
+}
+
+/* result section */ 
+/* fade & slide animation */
+#result-section {
+    margin-top: 30px;
+    border-top: 1px solid rgb(100, 100, 255, 0.2);
+    padding-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+}
+
+/* fade & slide animation */
+#result-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* audio container */ 
+#audio-container {
+    margin: 15px 0;
+    padding: 10px;
+    border-color: rgba(100, 100, 255, 0.1);/* subtle glow */
+    border: 1px solid rgba(102, 204, 255, 0.4); /* blue border */
+    border-radius: 50px; /* rounded pill shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(100, 100, 255, 0.2);
+    max-width: 50%; /* doesn't overflow container */
+    filter: invert(90%) sepia(20%) saturate(800%) hue-rotate(180deg) contrast(90%);
+}
+
+/* inner audio element */
+#audio-container audio {
+    width: 100%;
+    height: 40px;
+    outline: none;
+
+}
+
+/* staggered result animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeInAnimation {
+    /* Define your animation (e.g., name, duration, easing) */
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* stager delays */
+#result-word { animation-delay: 0.1s; }
+#word-meta { animation-delay: 0.2s; }
+#audio-container { animation-delay: 0.3s; }
+#definitions { animation-delay: 0.4s; }
+#synonyms { animation-delay: 0.5s; }
+
+h1, h2 {
+    color: #aaffaa; /* ehtheral green  */
+    text-shadow: 0 0 5px #aaffaa; /* subtle glow */
+    text-align: left;
+}
+
+h3 {
+    color: #87CEEB; /* yellow  */
+    text-shadow: 0 0 5px #87CEEB; /* subtle glow */
+    text-align: left;
+}
+
+h2 {
+    color: #aaffaa; /* ehtheral green  */
+    text-shadow: 0 0 5px #aaffaa; /* subtle glow */
+    text-align: left;
+    font-size: 40px;
+}
